@@ -5,7 +5,7 @@ import SidebarFooter from "./SidebarFooter";
 export default function SideBar() {
   return (
     <div class="flex h-screen">
-      <div class="bg-sidebar text-white  md:w-1/4 lg:w-1/4 xl:w-1/5 2xl:w-1/5 p-10 relative">
+      <div class="bg-sidebar text-white md:w-1/4 lg:w-1/4 xl:w-1/5 2xl:w-1/5 p-10 relative">
         <div class="p-4 flex items-center">
           <img
             class="w-12 h-12 rounded-full mr-4"
@@ -15,14 +15,14 @@ export default function SideBar() {
           <div></div>
         </div>
         <div class="p-4 text-left">
-          <h2 class="font-bold text-base leading-28 font-basic-sans   text-sidebar_title">
+          <h2 class="font-bold text-base leading-28 font-basic-sans text-sidebar_title">
             SERVICES
           </h2>
           <ul>
             <li class="py-2">
               <a
                 href="#"
-                class="font-bold text-base leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+                class="font-bold text-base leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
               >
                 Scheduled
               </a>
