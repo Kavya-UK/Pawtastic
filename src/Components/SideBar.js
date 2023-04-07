@@ -4,7 +4,7 @@ import SidebarFooter from "./SidebarFooter";
 
 export default function SideBar() {
   return (
-    <div class="flex h-screen">
+    // <div class="flex h-screen">
       <div class="bg-sidebar text-white md:w-1/4 lg:w-1/4 xl:w-1/5 2xl:w-1/5 p-10 relative">
         <div class="p-4 flex items-center">
           <img
@@ -19,18 +19,18 @@ export default function SideBar() {
             SERVICES
           </h2>
           <ul>
-            <li class="py-2">
+            <li class="">
               <a
                 href="#"
-                class="font-bold text-base leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+                class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
               >
                 Scheduled
               </a>
             </li>
-            <li class="py-2">
+            <li class="">
               <a
                 href="#"
-                class=" font-bold text-base leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+                class=" font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
               >
                 Completed
               </a>
@@ -42,18 +42,18 @@ export default function SideBar() {
             PETS
           </h2>
           <ul>
-            <li class="py-2">
+            <li class="">
               <a
                 href="#"
-                class="font-bold text-base leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+                class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
               >
                 Ginger
               </a>
             </li>
-            <li class="py-2">
+            <li class="">
               <a
                 href="#"
-                class="font-bold text-base leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+                class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
               >
                 Fluffy
               </a>
@@ -65,6 +65,6 @@ export default function SideBar() {
         </div>
         <SidebarFooter/>
       </div>
-    </div>
+    // </div>
   );
 }
