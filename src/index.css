@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+
+    font-family: "basicSansNew";
+
+    src: url("./Assets/fonts/basicSans-New.ttf");
+
+}
+@font-face {
+
+    font-family: "HenrietteRegular";
+
+    src: url("./Assets/fonts/Henriette-Regular.ttf");
+
+}
+@font-face {
+
+    font-family: "basicSansRegular";
+
+    src: url("./Assets/fonts/BasicSans-Regular.otf");
+
+}

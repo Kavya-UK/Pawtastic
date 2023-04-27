@@ -1,70 +1,69 @@
 import React from "react";
 import Logomark from "../images/Logomark.png";
-import SidebarFooter from "./SidebarFooter";
+import { Link } from "react-router-dom";
+import SidebarFooter from "../Components/SideBars/SidebarFooter";
 
 export default function SideBar() {
   return (
-    // <div class="flex h-screen">
-      <div class="bg-sidebar text-white md:w-1/4 lg:w-1/4 xl:w-1/5 2xl:w-1/5 p-10 relative">
-        <div class="p-4 flex items-center">
-          <img
-            class="w-12 h-12 rounded-full mr-4"
-            src={Logomark}
-            alt="Avatar"
-          />
-          <div></div>
-        </div>
-        <div class="p-4 text-left">
-          <h2 class="font-bold text-base leading-28 font-basic-sans text-sidebar_title">
-            SERVICES
-          </h2>
-          <ul>
-            <li class="">
-              <a
-                href="#"
-                class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
-              >
-                Scheduled
-              </a>
-            </li>
-            <li class="">
-              <a
-                href="#"
-                class=" font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
-              >
-                Completed
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="p-4 text-left">
-          <h2 class="font-bold text-base leading-28 font-basic-sans  text-left text-sidebar_title">
-            PETS
-          </h2>
-          <ul>
-            <li class="">
-              <a
-                href="#"
-                class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
-              >
-                Ginger
-              </a>
-            </li>
-            <li class="">
-              <a
-                href="#"
-                class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
-              >
-                Fluffy
-              </a>
-            </li>
-          </ul>
-          <button class="mt-10 p-2 font-bold text-base leading-28 font-basic-sans  w-full rounded-lg bg-white text-button_color">
-            Book a service
-          </button>
-        </div>
-        <SidebarFooter/>
+    <div class="bg-sidebar text-white h-[100%] pl-[50px] relative">
+      <div class="p-[16px] flex items-center">
+        <img
+          class="w-[40px] h-[40px] rounded-full mr-4"
+          src={Logomark}
+          alt="Avatar"
+        />
+        <div></div>
       </div>
-    // </div>
+      <div class="p-[2px] text-left mt-[28px]">
+        <h2 class="font-bold text-base leading-28 font-basic-sans text-sidebar_title">
+          SERVICES
+        </h2>
+        <ul>
+          <li class="">
+            <Link
+              href="#"
+              class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+            >
+              Scheduled
+            </Link>
+          </li>
+          <li class="">
+            <Link
+              href="#"
+              class=" font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+            >
+              Completed
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div class="p-[2px] text-left mt-[30px]">
+        <h2 class="font-bold text-base leading-28 font-basic-sans text-sidebar_title">
+          PETS
+        </h2>
+        <ul>
+          <li class="">
+            <Link
+              href="#"
+              class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+            >
+              Ginger
+            </Link>
+          </li>
+          <li class="">
+            <Link
+              href="#"
+              class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+            >
+              Fluffy
+            </Link>
+          </li>
+        </ul>
+        <button class="mt-[30px] px-[20px] py-[10px] font-bold text-3xl leading-26 font-basic-sans rounded-[5px] bg-white text-button_color">
+          Book a service
+        </button>
+      </div>
+      <SidebarFooter />
+    </div>
   );
 }
