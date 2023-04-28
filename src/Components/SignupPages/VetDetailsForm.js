@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Field } from "react-final-form";
 import { useDispatch,useSelector } from "react-redux";
-import { setVetDetails } from "../../Redux/VetDetailSlice";
+import { setVetDetails } from "../../Redux/PetSignUpSlice";
 
 
 export default function VetDetailsForm() {
   const navigate = useNavigate();
     const dispatch = useDispatch();
-    const formValue = useSelector((state) => state.vetenaryinfo.vetInfo);
+    const formValue = useSelector((state) => state.PetSignUp.vetInfo);
 
 
   const onSubmitHandler = (form) => {

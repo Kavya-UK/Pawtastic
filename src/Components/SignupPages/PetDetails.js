@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { Form, Field } from "react-final-form";
-import { setPetDetails } from "../../Redux/PetDetailsSlice";
+import { setPetDetails } from "../../Redux/PetSignUpSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function PetDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const formValue = useSelector((state) => state.PetsDetails.petdetail);
+  const formValue = useSelector((state) => state.PetSignUp.petdetail);
 
   const onSubmitHandler = (form) => {
     console.log("FORM VALUES", form);

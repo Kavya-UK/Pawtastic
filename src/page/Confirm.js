@@ -5,10 +5,10 @@ import puppy from "../images/puppy_01.png"
 export default function ConfirmPage() {
   return (
     <div className="flex flex-row min-h-screen">
-      <div className="w-1/3 bg-fixed bg-gray_blue">
+      <div className="w-1/5 bg-fixed bg-gray_blue">
         <SignupPage3SideBar pageTitle="confirm" pageimg={puppy} />
       </div>
-      <div className="w-2/3 ">
+      <div className="w-4/5 ">
         <ConfirmForm />
       </div>
     </div>

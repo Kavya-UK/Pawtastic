@@ -6,10 +6,10 @@ import catwalk from "../images/cat-walk_01.png"
 export default function SignupPageHome3() {
   return (
     <div className="flex flex-row min-h-screen">
-      <div className="w-1/3 bg-fixed  bg-gray_blue">
+      <div className="md:w-1/5 hidden md:block bg-fixed  bg-gray_blue">
         <SignupPage3SideBar pageTitle="petBasic" pageimg={catwalk} />
       </div>
-      <div className="w-2/3 ">
+      <div className=" w-full md:w-4/5 bg-shaded_pink">
         <PetType />
       </div>
     </div>

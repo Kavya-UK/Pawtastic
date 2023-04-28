@@ -1,16 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { petbasic:{}, };
+const initialState = {
+  petbasic: {},
+  petdetail: {},
+  userinfo: {},
+  loginInfo: {},
+  petType: {},
+  vetInfo: {},
+};
 
 const PetSignUpSlice = createSlice({
   name: "signUp",
   initialState,
   reducers: {
     setPetBasic(state, actions) {
-     state.petbasic = actions.payload
+      state.petbasic = actions.payload;
+    },
+
+    setPetDetails(state, actions) {
+      state.petdetail = actions.payload;
+    },
+    setHumanProfile(state, actions) {
+      state.userinfo = actions.payload;
+    },
+    setLogin(state, actions) {
+      state.loginInfo = actions.payload;
+    },
+    setpetLabel(state, actions) {
+      state.petType = actions.payload;
+    },
+    setVetDetails(state, actions) {
+      state.vetInfo = actions.payload;
     },
   },
 });
 
-export const { setPetBasic } = PetSignUpSlice.actions;
+export const {
+  setPetBasic,
+  setPetDetails,
+  setHumanProfile,
+  setLogin,
+  setpetLabel,
+  setVetDetails,
+} = PetSignUpSlice.actions;
 export default PetSignUpSlice.reducer;

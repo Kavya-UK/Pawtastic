@@ -1,15 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 export default function SecondarySideBar() {
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   return (
     <div class="bg-sidebar text-white relative ">
       <div class="p-[20px] sidebar_title border-b-2 border-gray-500  ">
         <h2 class=" leading-32 font-basic-sans text-sidebar_title text-4xl font-light ">
           My Account
         </h2>
-        {/* <div></div> */}
       </div>
       <div class="pl-[50px] ">
         <div class=" p-[2px] text-left mt-[28px]  ">
@@ -18,20 +17,21 @@ export default function SecondarySideBar() {
           </h2>
           <ul>
             <li>
-              <a
-                href="#"
-                class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover" onClick={()=>navigate("/homeaddress")}
+              <Link
+                to="#"
+                className="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+                onClick={() => navigate("/homeaddress")}
               >
                 Home address
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
-                class=" font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+              <Link
+                to="#"
+                className=" font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
               >
                 Contact info
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -41,21 +41,21 @@ export default function SecondarySideBar() {
           </h2>
           <ul>
             <li>
-              <a
-                href="#"
+              <Link
+                to="#"
                 class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
                 onClick={() => navigate("/paymentmethod")}
               >
                 Payment methods
-              </a>
+              </Link>
             </li>
             <li>
-              <a
-                href="#"
+              <Link
+                to="#"
                 class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
               >
                 Receipts
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

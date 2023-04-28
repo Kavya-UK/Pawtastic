@@ -29,19 +29,18 @@ export default function PetProfileSignup() {
       }}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <div className="bg-shaded_pink h-[100%]">
+          <div className="h-[100%]">
             <div className="p-[25px] ">
-              <div className="w-[60%] mx-auto">
-                <h4 className="text-gray_blue font-henriette font-bold text-[45px] leading-56 text-left">
-                  Yay, we love dogs! Give us
-                  <br /> the basics about your pup.
+              <div className=" w-full ]xl:w-[60%] mx-auto">
+                <h4 className="text-gray_blue font-henriette font-bold text-5xl xl:text-8xl leading-25 xl:leading-56 text-left">
+                  Yay, we love dogs! Give us the basics about your pup.
                 </h4>
               </div>
 
-              <div className="w-[60%] grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className="w-full xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="Petname"
                   >
                     Name
@@ -54,11 +53,11 @@ export default function PetProfileSignup() {
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block ml-[0px]">
-                  <div class=" w-full max-w-xs mx-auto text-left">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
+                  <div class="  w-full max-w-xs mx-auto text-left ">
                     <label
                       for="uploadPhoto"
-                      class=" inline-block w-12 h-12 bg-white rounded-full cursor-pointer relative top-[40px]"
+                      class=" inline-block w-12 h-12 bg-white rounded-full cursor-pointer relative top-[30px] xl:top-[40px] "
                     >
                       <FontAwesomeIcon
                         icon={faCamera}
@@ -73,16 +72,16 @@ export default function PetProfileSignup() {
                       id="uploadPhoto"
                     />
 
-                    <span class="inline-block text-grayish_blue font-basis-sans text-center text-3xl relative top-[20px] pl-[20px]">
+                    <span class="inline-block text-grayish_blue font-basis-sans text-center  text-lg xl:text-3xl relative top-[10px] xl:top-[20px] pl-[8px] xl:pl-[20px]">
                       Upload a photo
                     </span>
                   </div>
                 </div>
               </div>
-              <div className="w-[60%] grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className="w-full xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="breed"
                   >
                     Breed
@@ -95,9 +94,9 @@ export default function PetProfileSignup() {
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block ml-[0px]">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="birthday"
                   >
                     Birthday
@@ -106,21 +105,21 @@ export default function PetProfileSignup() {
                     name="birthday"
                     component="input"
                     placeholder="MM/DD/YYYY"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                    className=" text-lg xl:text-2xl w-full px-4 py-3 mt-1  text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="date"
                   />
                 </div>
               </div>
-              <div className="w-[60%] grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className="w-full xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="gender"
                   >
                     Gender
                   </label>
 
-                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 py-[10px] text-gray_blue font-basic-sans">
+                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 py-[10px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
                     <Field name="gender" parse={() => "Female"}>
                       {({ input, meta }) => {
                         return (
@@ -128,7 +127,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "Female"
                                 ? "bg-pinkish_beige"
                                 : "")
@@ -145,7 +144,7 @@ export default function PetProfileSignup() {
                           type="button"
                           onClick={input.onChange}
                           className={
-                            "px-[20px] py-[5px] " +
+                            "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                             (input.value === "Male" ? "bg-pinkish_beige" : "")
                           }
                         >
@@ -155,14 +154,14 @@ export default function PetProfileSignup() {
                     </Field>
                   </div>
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block ml-[0px]">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="spayed"
                   >
                     Spayed or Neutured
                   </label>
-                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 py-[10px] text-gray_blue font-basic-sans">
+                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 py-[10px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
                     <Field name="spayed" parse={() => "Yes"}>
                       {({ input, meta }) => {
                         return (
@@ -170,7 +169,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "Yes" ? "bg-pinkish_beige" : "")
                             }
                           >
@@ -186,7 +185,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "No" ? "bg-pinkish_beige" : "")
                             }
                           >
@@ -198,15 +197,15 @@ export default function PetProfileSignup() {
                   </div>
                 </div>
               </div>
-              <div className="w-[60%]  mx-auto">
-                <div className="mb-[5px] mt-[20px] ">
+              <div className="w-full xl:w-[60%]  mx-auto">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] ">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="weight"
                   >
                     Weight
                   </label>
-                  <div className="bg-white p-[5px] grid grid-cols-4 gap-4 py-[10px] text-gray_blue font-basic-sans">
+                  <div className="bg-white p-[5px] grid grid-cols-4 xl:gap-4 py-[10px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
                     <Field name="weight" parse={() => "10-20"}>
                       {({ input, meta }) => {
                         return (
@@ -214,7 +213,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "10-20"
                                 ? "bg-pinkish_beige"
                                 : "")
@@ -232,7 +231,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "20-50"
                                 ? "bg-pinkish_beige"
                                 : "")
@@ -250,7 +249,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "50-100"
                                 ? "bg-pinkish_beige"
                                 : "")
@@ -268,7 +267,7 @@ export default function PetProfileSignup() {
                             type="button"
                             onClick={input.onChange}
                             className={
-                              "px-[20px] py-[5px] " +
+                              "px-[0px] xl:px-[20px] py-[0px] xl:py-[5px] " +
                               (input.value === "100+" ? "bg-pinkish_beige" : "")
                             }
                           >
@@ -281,13 +280,13 @@ export default function PetProfileSignup() {
                 </div>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
+            <div className="fixed bottom-[0px] w-full xl:w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
               <div>
                 <button
                   onClick={() => {
                     navigate("/PetType");
                   }}
-                  className="bg-white font-light font-basic-sans text-2xl px-[40px] ml-[20px] py-[8px] text-gray_blue border border-gray_blue inline-block rounded-[20px]"
+                  className="bg-white font-light font-basic-sans text-lg xl:text-2xl px-[42px] xl:px-[80px] py-[6px] xl:py-[8px] ml-[20px]  text-gray_blue border border-gray_blue inline-block rounded-[20px]"
                 >
                   Back
                 </button>
@@ -298,7 +297,7 @@ export default function PetProfileSignup() {
                   // onClick={() => {
                   //   navigate("/petDetails");
                   // }}
-                  className="bg-gray_blue px-[80px] ml-[20px] py-[8px] text-white inline-block rounded-[20px]"
+                  className="bg-gray_blue ml-[20px] px-[42px] xl:px-[80px] py-[6px] xl:py-[8px] text-white text-lg xl:text-2xl inline-block rounded-[20px]"
                 >
                   Next
                 </button>

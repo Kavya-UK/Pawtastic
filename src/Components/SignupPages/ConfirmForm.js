@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 export default function ConfirmForm() {
   const navigate = useNavigate();
   const petbasic = useSelector((state) => state.PetSignUp.petbasic);
-  const petdetail = useSelector((state) => state.PetsDetails.petdetail);
+  const petdetail = useSelector((state) => state.PetSignUp.petdetail);
   
 
   return (

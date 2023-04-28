@@ -1,4 +1,4 @@
-import SideBar from '../Components/SideBar';
+import SideBar from '../Components/SideBars/SideBar';
 import SecondarySideBar from "../Components/SideBars/Secondary-SideBar";
 import PetProfile from '../Components/PetProfile';
 import PetPCondensed from '../Components/PetPCondensed';

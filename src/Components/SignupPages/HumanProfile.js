@@ -2,13 +2,13 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, Field } from "react-final-form";
 import { useDispatch, useSelector } from "react-redux";
-import {setHumanProfile} from "../../Redux/HumanProfileSlice"
+import {setHumanProfile} from "../../Redux/PetSignUpSlice"
 
 
 export default function HumanProfile() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const formValue = useSelector(state => state.userDetails.userinfo);
+    const formValue = useSelector((state) => state.PetSignUp.userinfo);
 
     const onSubmitHandler = (form) => {
       console.log("FORM VALUES", form);
@@ -33,18 +33,17 @@ export default function HumanProfile() {
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
           <div className="bg-shaded_pink h-[100%]">
-            <div className="p-[25px] ">
-              <div className="w-[60%] mx-auto">
-                <h4 className="text-gray_blue font-henriette font-bold text-5xl lg:text-8xl leading-25 lg:leading-56 text-left">
-                  Hello! Please tell us a little
-                  <br /> bit about yourself.
+            <div className="p-[25px]  ">
+              <div className=" w-[100%] xl:w-[60%] mx-auto">
+                <h4 className="text-gray_blue font-henriette font-bold text-5xl xl:text-8xl leading-25 xl:leading-56 text-left">
+                  Hello! Please tell us a little bit about yourself.
                 </h4>
               </div>
 
-              <div className="w-[60%] grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className=" w-[100%] xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="firstname"
                   >
                     First name
@@ -58,9 +57,9 @@ export default function HumanProfile() {
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block ml-[0px]">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="lastname"
                   >
                     Last name
@@ -74,10 +73,10 @@ export default function HumanProfile() {
                   />
                 </div>
               </div>
-              <div className="w-[60%] grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className="w-[100%] xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="phone"
                   >
                     Phone
@@ -90,9 +89,9 @@ export default function HumanProfile() {
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block ml-[0px]">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="landline"
                   >
                     Landline
@@ -106,10 +105,10 @@ export default function HumanProfile() {
                   />
                 </div>
               </div>
-              <div className="w-[60%] grid grid-cols gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className="w-[100%] xl:w-[60%] grid grid-cols gap-4 mx-auto">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="label"
                   >
                     Label
@@ -123,10 +122,10 @@ export default function HumanProfile() {
                   />
                 </div>
               </div>
-              <div className="w-[60%] grid grid-cols-4  gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] col-span-2 inline-block">
+              <div className="w-[100%] xl:w-[60%] grid grid-cols-4  gap-4 mx-auto">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] col-span-2 inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="city"
                   >
                     City
@@ -139,9 +138,9 @@ export default function HumanProfile() {
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="state"
                   >
                     State
@@ -156,9 +155,9 @@ export default function HumanProfile() {
                     <option value="DX">DX</option>
                   </Field>
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block">
+                <div className=" mb-[45px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="zip"
                   >
                     Zip
@@ -173,13 +172,13 @@ export default function HumanProfile() {
                 </div>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
+            <div className="fixed bottom-[0px]  w-full md:w-2/3 py-[5px] xl:py-[20px] bg-white_color grid grid-cols-2 ">
               <div>
                 <button
                   onClick={() => {
                     navigate("/SignupPage2");
                   }}
-                  className="bg-white font-light font-basic-sans text-2xl px-[40px] ml-[20px] py-[8px] text-gray_blue border border-gray_blue inline-block rounded-[20px]"
+                  className="bg-white font-light px-[42px] xl:px-[80px] py-[6px] xl:py-[8px] font-basic-sans text-lg xl:text-2xl  ml-[20px]  text-gray_blue border border-gray_blue inline-block rounded-[15px]"
                 >
                   Back
                 </button>
@@ -190,7 +189,7 @@ export default function HumanProfile() {
                   // onClick={() => {
                   //   navigate("/petType");
                   // }}
-                  className="bg-gray_blue px-[80px] ml-[20px] py-[8px] text-white inline-block rounded-[20px]"
+                  className="bg-gray_blue px-[42px] xl:px-[80px] ml-[20px] py-[6px] xl:py-[8px] text-white font-basic-sans text-lg xl:text-2xl inline-block rounded-[20px]"
                 >
                   Next
                 </button>
