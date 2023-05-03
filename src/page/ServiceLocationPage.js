@@ -1,13 +1,12 @@
 import React from 'react'
 import LoginWrapper from "./LoginWrapper";
-import SignupPage1 from '../Components/SignupPages/SignupPage1';
+import ServiceLocation from '../Components/SignupPages/ServiceLocation';
 import SideBarimg from "../images/Signup-1.png";
 
-export default function SignupPageHome1() {
+export default function ServiceLocationPage() {
   return (
     <LoginWrapper SideBarimg={SideBarimg} sidebarTitle="Why our service?">
-      <SignupPage1 />
+      <ServiceLocation />
     </LoginWrapper>
-
   );
 }

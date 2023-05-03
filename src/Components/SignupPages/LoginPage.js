@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
 import { Form, Field } from "react-final-form";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../Redux/PetSignUpSlice";
-
+import InputComponent from "../InputComponent";
+import {required} from '../../helper/formValidation'
 export default function LoginPage({ isLogin }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formValue = useSelector((state) => state.PetSignUp.loginInfo);
-
+  const [isErrorLabel, setIsErrorLabel] = useState(false);
   const onSubmitHandler = (form) => {
     console.log("FORM VALUES", form);
     dispatch(setLogin(form));
     navigate("/humanProfile");
   };
-
+const showlabelRed = flag => {
+  setIsErrorLabel(flag)
+}
   return (
     <Form
       onSubmit={onSubmitHandler}
@@ -26,49 +29,50 @@ export default function LoginPage({ isLogin }) {
       }}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <div className="bg-shaded_pink h-full">
-            <div className=" p-[18px] xl:p-[25px] ">
-              <div className="w-full xl:w-[60%] mx-auto">
-                <h4 className="text-gray_blue font-henriette font-bold text-5xl xl:text-8xl leading-25 xl:leading-56 text-center xl:text-left">
-                  Good news! We care for <br/> pets in Winter Park.Let's <br/>create your
+          <div className=" h-full ">
+            <div className=" p-[18px] xl:p-[25px] w-full lg:w-[80%] xl:w-[70%] mx-auto">
+              <div className="">
+                <h4 className="text-gray_blue font-henriette font-bold text-6xl xl:text-8xl leading-35 xl:leading-56 text-left">
+                  Good news! We care for pets in Winter Park.Let's create your
                   account.
                 </h4>
               </div>
 
-              <div className="mb-4  w-[100%] xl:w-[60%] mt-[20px] mx-auto  ">
+              <div className="mb-4   mt-[20px] mx-auto  ">
                 <label
                   className="block text-xl xl:text-3xl font-normal text-gray-500"
                   for="emailId"
                 >
                   Email ID
                 </label>
-                <Field
+
+                <InputComponent
                   name="email"
                   component="input"
                   placeholder="Enter email id"
-                  className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                   type="text"
+                  validate={required}
                 />
               </div>
 
               {isLogin ? (
-                <div className="mb-4 w-[100%] xl:w-[60%] mt-[20px] mx-auto">
+                <div className="mb-4  mt-[20px] mx-auto">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="password"
                   >
                     Password
                   </label>
-                  <Field
+                  <InputComponent
                     name="password"
                     component="input"
                     placeholder="******"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="password"
+                    validate={required}
                   />
                 </div>
               ) : (
-                <div className="w-[100%] xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+                <div className=" grid grid-cols-2 gap-4 mx-auto">
                   <div className="mb-4 mt-[20px] inline-block">
                     <label
                       className="block text-xl xl:text-3xl font-normal text-gray-500"
@@ -76,12 +80,12 @@ export default function LoginPage({ isLogin }) {
                     >
                       Password
                     </label>
-                    <Field
+                    <InputComponent
                       name="password"
                       component="input"
                       placeholder="******"
-                      className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                       type="password"
+                      validate={required}
                     />
                   </div>
                   <div className="mb-4 mt-[20px] inline-block ml-[0px]">
@@ -91,46 +95,49 @@ export default function LoginPage({ isLogin }) {
                     >
                       Confirm password
                     </label>
-                    <Field
+                    <InputComponent
                       name="confirm password"
                       component="input"
                       placeholder="******"
-                      className="w-full px-4 py-3 mt-1 text-xl xl:text-3xl text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                       type="password"
+                      validate={required}
                     />
                   </div>
                 </div>
               )}
-              <div className="flex mb-4 w-[100%] xl:w-[60%] mt-[20px] mx-auto">
-                <Field
+              <div className="flex mb-4  mt-[20px] mx-auto">
+                <InputComponent
                   name="privacypolicycheckbox"
                   component="input"
                   placeholder="******"
-                  className="form-checkbox h-5 w-5 text-blue-600"
+                  className="form-checkbox border-2 border-red-500 h-5 w-5  "
                   type="checkbox"
+                  validate={required}
+                  showlabelRed={showlabelRed}
                 />
-                {/* <input
-                  id="privacy-policy-checkbox"
-                  type="checkbox"
-                  className="form-checkbox h-5 w-5 text-blue-600"
-                /> */}
+
                 <label
                   for="privacy-policy-checkbox"
-                  className="ml-2 block font-basic-sans text-xl xl:text-3xl text-grayish_blue"
+                  className={
+                    "ml-2 block font-basic-sans text-xl xl:text-3xl " +
+                    (isErrorLabel
+                      ? "text-red-700"
+                      : "text-grayish_blue")
+                  }
                 >
-                  I have read the Privacy Policy and agree to the Terms of
-                  Service .
+                  I have read the Privacy Policy and agree to the
+                  Terms of Service .
                 </label>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-[100%] xl:w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
+            <div className="fixed bottom-[0px] w-[100%] md:w-4/5 py-[15px] xl:py-[20px] bg-white_color grid grid-cols-2 ">
               <p className="text-gray_blue  font-basic-sans">
                 <span className="text-grayish_blue">
                   {isLogin ? "Not a member?" : "Already a member?"}{" "}
                 </span>
                 <span
                   onClick={() => {
-                    isLogin ? navigate("/humanprofile") : navigate("/home");
+                    isLogin ? navigate("/service-location") : navigate("/home");
                   }}
                   className="text-gray_blue"
                 >
@@ -140,12 +147,7 @@ export default function LoginPage({ isLogin }) {
               <div>
                 <button
                   type="submit"
-                  // onClick={() => {
-                  //   isLogin
-                  //     ? navigate("/petType")
-                  //     : navigate("/humanProfile");
-                  // }}
-                  className="bg-gray_blue text-lg xl:text-2xl px-[42px] xl:px-[80px] ml-[20px] py-[6px] xl:py-[8px] text-white inline-block rounded-[20px]"
+                  className="bg-gray_blue px-[30px] xl:px-[50px] py-[6px] xl:py-[8px] text-white inline-block rounded-[20px] text-right text-lg xl:text-2xl font-basic-sans"
                 >
                   {isLogin ? "Login" : "Next"}
                 </button>

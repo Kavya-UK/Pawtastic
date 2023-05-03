@@ -3,12 +3,12 @@ import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Home from "../src/page/Home";
 import Dashboard from "../src/page/Dashboard";
 import SampleComponents from "../src/page/SampleComponents";
-import SignupPageHome1 from "./page/SignupPageHome1";
-import SignupPageHome2 from "./page/SignupPageHome2";
+import ServiceLocationPage from "./page/ServiceLocationPage";
+import SignupPage from "./page/SignupPage";
 import PetType from "./page/PetType";
 import HumanProfile from "./page/HumanProfile";
-import SignupPageHome4 from "./page/PetProfileSignup";
-import SignupPageHome5 from "./page/PetDetails";
+import PetProfileSignup from "./page/PetProfileSignup";
+import PetDetails from "./page/PetDetails";
 import VetDetails from "./page/VetDetails";
 import ConfirmPage from "./page/Confirm";
 import MyProfile from "./page/MyProfile";
@@ -24,31 +24,38 @@ const Routing=()=>{
     return (
       <BrowserRouter>
         <Routes>
+          {/* Responsive */}
+          <Route exact path="/" element={<Home />}>
+            {" "}
+          </Route>
+          {/* Responsive */}
           <Route exact path="/home" element={<Home />}>
             {" "}
           </Route>
           <Route exact path="/dashboard" element={<Dashboard />}>
             {" "}
           </Route>
-          <Route exact path="/" element={<SampleComponents />}>
+          <Route
+            exact
+            path="/service-location"
+            element={<ServiceLocationPage />}
+          >
             {" "}
           </Route>
-          <Route exact path="/SignupPage1" element={<SignupPageHome1 />}>
-            {" "}
-          </Route>
-          <Route exact path="/signupPage2" element={<SignupPageHome2 />}>
-            {" "}
-          </Route>
-          <Route exact path="/petType" element={<PetType />}>
+          <Route exact path="/signup" element={<SignupPage />}>
             {" "}
           </Route>
           <Route exact path="/humanProfile" element={<HumanProfile />}>
             {" "}
           </Route>
-          <Route exact path="/petprofilesignup" element={<SignupPageHome4 />}>
+          <Route exact path="/petType" element={<PetType />}>
             {" "}
           </Route>
-          <Route exact path="/petdetails" element={<SignupPageHome5 />}>
+
+          <Route exact path="/petprofilesignup" element={<PetProfileSignup />}>
+            {" "}
+          </Route>
+          <Route exact path="/petdetails" element={<PetDetails />}>
             {" "}
           </Route>
           <Route exact path="/vetdetails" element={<VetDetails />}>
@@ -79,7 +86,7 @@ const Routing=()=>{
           <Route exact path="/petinfo" element={<PetInfoForm />}>
             {" "}
           </Route>
-          
+
           <Route exact path="/bookingpayment" element={<BookingPayment />}>
             {" "}
           </Route>

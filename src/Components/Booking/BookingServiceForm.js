@@ -7,7 +7,7 @@ export default function BookingServiceForm() {
 
   return (
     <div className="bg-shaded_pink h-[100%] ">
-      <div className=" w-[60%] mx-auto ">
+      <div className="w-full lg:w-[80%] xl:w-[70%] mx-auto ">
         <div className=" mx-auto pt-[30px] ">
           <h4 className="text-gray_blue font-henriette font-bold text-5xl lg:text-8xl leading-25 lg:leading-56 text-left ">
             We can’t wait to see your pet! How can we help?

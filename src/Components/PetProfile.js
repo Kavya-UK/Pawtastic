@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVenus, faCheck } from "@fortawesome/free-solid-svg-icons";
 
 const PetProfile = ({ petDetails, petDetaill,  }) => {
-  function calculateAge(birthDate) {
+  function calculateAge(birthDate) {  
     const birthDateObj = new Date(birthDate);
 
     const currentDate = new Date();
@@ -68,10 +68,12 @@ const PetProfile = ({ petDetails, petDetaill,  }) => {
             </div>
             <div className="border-r-1 flex flex-col  ">
               <div className="inline-block   text-4xl text-Pet_type font-weight-300 font-basic-sans text-center not-italic leading-8 mt-[6px] ">
-                {calculateAge(petDetails.birthday)}
+                {isNaN(calculateAge(petDetails.birthday))
+                  ? "0"
+                  : calculateAge(petDetails.birthday)}
               </div>
               <div className=" text-Pet_type font-basic-sans text-base font-bold not-italic leading-28 text-center tracking-100 ">
-                YEARS OLD
+                YEAR OLD
               </div>
             </div>
             <div className="border-r-1 inline-block ">

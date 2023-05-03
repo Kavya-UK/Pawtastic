@@ -33,7 +33,8 @@ input {
     font-style: normal;
     text-align: left;
     color: #ebd0ce;
-    padding: 1rem;
+    padding: 3px 10px;
+    /* padding: ; */
     margin-top: 0.25rem;
     background-color: #fff;
     border: 1px solid #d2d6dc;
@@ -42,32 +43,11 @@ input {
     outline: none;
 }
 
-input:focus {
+/* input:focus {
     ring-width: 2px;
     ring-offset-width: 2px;
     ring-offset-color: #fff;
     ring-color: #60a5fa;
     border-color: #60a5fa;
-}
+} */
 
-
-::-webkit-scrollbar {
-    width: 5px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: grey;
-    border-radius: 10px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: grey;
-}

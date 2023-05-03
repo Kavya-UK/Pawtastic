@@ -3,7 +3,8 @@ import { useNavigate, Link } from "react-router-dom";
 import { Form, Field } from "react-final-form";
 import { setPetDetails } from "../../Redux/PetSignUpSlice";
 import { useDispatch, useSelector } from "react-redux";
-
+import Footer from "../Footer";
+import InputComponent from "../InputComponent";
 export default function PetDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -18,9 +19,9 @@ export default function PetDetails() {
     <Form
       onSubmit={onSubmitHandler}
       initialValues={{
-        "favroite": formValue.favroite,
-        "petdetails": formValue.petdetails,
-        "pethabits": formValue.pethabits,
+        favroite: formValue.favroite,
+        petdetails: formValue.petdetails,
+        pethabits: formValue.pethabits,
       }}
       mutators={{
         setFavorites: (event, state, utils) => {
@@ -44,22 +45,20 @@ export default function PetDetails() {
       }}
       render={({ form, handleSubmit }) => (
         <form onSubmit={handleSubmit}>
-          <div className="bg-shaded_pink h-[100%]">
-            <div className="p-[25px] ">
-              <div className="w-[60%] mx-auto">
-                <h4 className="text-gray_blue font-henriette font-bold text-[45px] leading-56 text-left">
-                  Thanks! Now give us all the
-                  <br />
-                  details about Ginger.
+          <div className=" h-[100%]">
+            <div className="p-[25px] w-full lg:w-[80%] xl:w-[70%] mx-auto">
+              <div className=" mx-auto">
+                <h4 className="text-gray_blue font-henriette font-bold text-6xl xl:text-8xl leading-35 xl:leading-56 text-left">
+                  Thanks! Now give us all the details about Ginger.
                 </h4>
               </div>
-              <div className="w-[60%] mx-auto mt-[30px] mb-[10px]">
+              <div className="  mt-[30px] mb-[10px]">
                 <p className="text-start text-grayish_blue text-3xl font-basic-sans">
                   Favourite things
                 </p>
               </div>
 
-              <div className="w-[60%] grid grid-cols-3 gap-3 mx-auto">
+              <div className=" grid grid-cols-3 gap-3 mx-auto">
                 <div class="flex items-center font-basic-san">
                   <Field
                     name="select all"
@@ -71,7 +70,10 @@ export default function PetDetails() {
                     type="checkbox"
                   />
 
-                  <label for="select all checkbox" className="ml-2 text-xl">
+                  <label
+                    for="select all checkbox"
+                    className="ml-2 text-lg sm:text-2xl"
+                  >
                     Select all
                   </label>
                 </div>
@@ -84,7 +86,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Giving kisses" class="ml-2 text-xl">
+                  <label for="Giving kisses" class="ml-2 text-lg sm:text-2xl">
                     Giving kisses
                   </label>
                 </div>
@@ -97,7 +99,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Walks
                   </label>
                 </div>
@@ -110,7 +112,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Barking
                   </label>
                 </div>
@@ -123,7 +125,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Snuggling
                   </label>
                 </div>
@@ -136,7 +138,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Treats
                   </label>
                 </div>
@@ -149,7 +151,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Playing fetch
                   </label>
                 </div>
@@ -162,7 +164,7 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Naps
                   </label>
                 </div>
@@ -175,58 +177,44 @@ export default function PetDetails() {
                     className="w-4 h-4 bg-white"
                     type="checkbox"
                   />
-                  <label for="Walks" class="ml-2 text-xl">
+                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
                     Toys
                   </label>
                 </div>
               </div>
-              <div className="w-[60%] mx-auto mt-[30px] mb-[5px] text-left">
+              <div className=" mx-auto mt-[30px] mb-[5px] text-left">
                 <label>Pet details</label>
-                <Field
+                <InputComponent
                   name="petdetails"
-                  component="input"
-                  placeholder=""
-                  className="rows={4} w-[100%] bg-white"
+                  component="textarea"
+                  placeholder="Pet's name"
+                  rows="4"
                   type="textarea"
                 />
               </div>
-              <div className="w-[60%] mx-auto mt-[30px] mb-[5px] text-left">
+              <div className=" mx-auto mt-[30px] mb-[5px] text-left">
                 <label>Any pet habits</label>
-                <Field
+                <InputComponent
                   name="pethabits"
-                  component="input"
-                  placeholder=""
-                  className="rows={4} w-[100%] bg-white"
-                  type="textarea"
+                  component="textarea"
+                  placeholder="Pet's name"
+                  rows="4"
+                  type="text"
                 />
               </div>
 
-              <div className="w-[60%] mx-auto mb-[20px] ">
+              <div className=" mx-auto mb-[20px] ">
                 <Link className="text-gray_blue underline" to="/skip">
                   Skip
                 </Link>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
-              <div>
-                <button
-                  onClick={() => {
-                    navigate("/petprofilesignup");
-                  }}
-                  className="bg-white font-light font-basic-sans text-2xl px-[40px] ml-[20px] py-[8px] text-gray_blue border border-gray_blue inline-block rounded-[20px]"
-                >
-                  Back
-                </button>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="bg-gray_blue px-[80px] ml-[20px] py-[8px] text-white inline-block rounded-[20px]"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+            <Footer
+              leftTitle={"Back"}
+              rightTitle={"Next"}
+              leftNavigation={"/petprofilesignup"}
+              type="submit"
+            />
           </div>
         </form>
       )}

@@ -7,6 +7,7 @@ const initialState = {
   loginInfo: {},
   petType: {},
   vetInfo: {},
+  zipCodeInfo:{}
 };
 
 const PetSignUpSlice = createSlice({
@@ -32,6 +33,9 @@ const PetSignUpSlice = createSlice({
     setVetDetails(state, actions) {
       state.vetInfo = actions.payload;
     },
+    setZipDetails(state, actions) {
+      state.zipCodeInfo = actions.payload;
+    },
   },
 });
 
@@ -42,5 +46,6 @@ export const {
   setLogin,
   setpetLabel,
   setVetDetails,
+  setZipDetails,
 } = PetSignUpSlice.actions;
 export default PetSignUpSlice.reducer;

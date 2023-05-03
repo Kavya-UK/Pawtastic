@@ -1,17 +1,12 @@
 import React from "react";
-import SignupPage3SideBar from "../Components/SideBars/SignupPage3SideBar";
+import SignUpWrapper from "./SignUpWrapper";
 import PetType from "../Components/SignupPages/PetType";
 import catwalk from "../images/cat-walk_01.png"
 
 export default function SignupPageHome3() {
   return (
-    <div className="flex flex-row min-h-screen">
-      <div className="md:w-1/5 hidden md:block bg-fixed  bg-gray_blue">
-        <SignupPage3SideBar pageTitle="petBasic" pageimg={catwalk} />
-      </div>
-      <div className=" w-full md:w-4/5 bg-shaded_pink">
-        <PetType />
-      </div>
-    </div>
+    <SignUpWrapper pageTitle="petBasic" pageimg={catwalk}>
+      <PetType />
+    </SignUpWrapper>
   );
 }

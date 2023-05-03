@@ -5,7 +5,9 @@ import { faCamera } from "@fortawesome/free-solid-svg-icons";
 import { Form, Field } from "react-final-form";
 import {setPetBasic} from '../../Redux/PetSignUpSlice'
 import { useDispatch, useSelector } from "react-redux";
-   
+import Footer from "../Footer";
+import InputComponent from "../InputComponent";
+
 export default function PetProfileSignup() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -28,16 +30,16 @@ export default function PetProfileSignup() {
         weight: formValue.weight,
       }}
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
+        <form className="h-full " onSubmit={handleSubmit}>
           <div className="h-[100%]">
-            <div className="p-[25px] ">
-              <div className=" w-full ]xl:w-[60%] mx-auto">
-                <h4 className="text-gray_blue font-henriette font-bold text-5xl xl:text-8xl leading-25 xl:leading-56 text-left">
+            <div className="p-[25px] w-full lg:w-[80%] xl:w-[70%]  mx-auto">
+              <div className=" ">
+                <h4 className="text-gray_blue font-henriette font-bold text-6xl xl:text-8xl leading-35 xl:leading-56 text-left">
                   Yay, we love dogs! Give us the basics about your pup.
                 </h4>
               </div>
 
-              <div className="w-full xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+              <div className=" grid grid-cols-2 gap-4 mx-auto">
                 <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
@@ -45,11 +47,10 @@ export default function PetProfileSignup() {
                   >
                     Name
                   </label>
-                  <Field
+                  <InputComponent
                     name="petname"
                     component="input"
                     placeholder="Pet's name"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="text"
                   />
                 </div>
@@ -78,7 +79,7 @@ export default function PetProfileSignup() {
                   </div>
                 </div>
               </div>
-              <div className="w-full xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+              <div className=" grid grid-cols-2 gap-4 mx-auto">
                 <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
@@ -86,11 +87,10 @@ export default function PetProfileSignup() {
                   >
                     Breed
                   </label>
-                  <Field
+                  <InputComponent
                     name="breed"
                     component="input"
                     placeholder="Pet's breed"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="text"
                   />
                 </div>
@@ -101,16 +101,15 @@ export default function PetProfileSignup() {
                   >
                     Birthday
                   </label>
-                  <Field
+                  <InputComponent
                     name="birthday"
                     component="input"
                     placeholder="MM/DD/YYYY"
-                    className=" text-lg xl:text-2xl w-full px-4 py-3 mt-1  text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="date"
                   />
                 </div>
               </div>
-              <div className="w-full xl:w-[60%] grid grid-cols-2 gap-4 mx-auto">
+              <div className=" grid grid-cols-2 gap-4 mx-auto">
                 <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
@@ -119,7 +118,7 @@ export default function PetProfileSignup() {
                     Gender
                   </label>
 
-                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 py-[10px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
+                  <div className="bg-white grid grid-cols-2 gap-4 sm:px-[25px] py-[5px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
                     <Field name="gender" parse={() => "Female"}>
                       {({ input, meta }) => {
                         return (
@@ -154,14 +153,14 @@ export default function PetProfileSignup() {
                     </Field>
                   </div>
                 </div>
-                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
+                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px] ">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="spayed"
                   >
                     Spayed or Neutured
                   </label>
-                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 py-[10px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
+                  <div className="bg-white p-[5px] grid grid-cols-2 gap-4 sm:px-[25px] py-[5px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
                     <Field name="spayed" parse={() => "Yes"}>
                       {({ input, meta }) => {
                         return (
@@ -197,7 +196,7 @@ export default function PetProfileSignup() {
                   </div>
                 </div>
               </div>
-              <div className="w-full xl:w-[60%]  mx-auto">
+              <div className="  mx-auto">
                 <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] ">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
@@ -205,7 +204,7 @@ export default function PetProfileSignup() {
                   >
                     Weight
                   </label>
-                  <div className="bg-white p-[5px] grid grid-cols-4 xl:gap-4 py-[10px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
+                  <div className="bg-white p-[5px] grid grid-cols-4 xl:gap-4 lg:py-[3px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
                     <Field name="weight" parse={() => "10-20"}>
                       {({ input, meta }) => {
                         return (
@@ -219,7 +218,9 @@ export default function PetProfileSignup() {
                                 : "")
                             }
                           >
-                            10-20pounds
+                            10-20
+                            <br />
+                            Pounds
                           </button>
                         );
                       }}
@@ -237,7 +238,9 @@ export default function PetProfileSignup() {
                                 : "")
                             }
                           >
-                            20-50 Pounds
+                            20-50
+                            <br />
+                            Pounds
                           </button>
                         );
                       }}
@@ -255,7 +258,9 @@ export default function PetProfileSignup() {
                                 : "")
                             }
                           >
-                            50-100 Pounds
+                            50-100
+                            <br />
+                            Pounds
                           </button>
                         );
                       }}
@@ -271,7 +276,8 @@ export default function PetProfileSignup() {
                               (input.value === "100+" ? "bg-pinkish_beige" : "")
                             }
                           >
-                            100+ Pounds
+                            100+ <br />
+                            Pounds
                           </button>
                         );
                       }}
@@ -280,29 +286,12 @@ export default function PetProfileSignup() {
                 </div>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-full xl:w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
-              <div>
-                <button
-                  onClick={() => {
-                    navigate("/PetType");
-                  }}
-                  className="bg-white font-light font-basic-sans text-lg xl:text-2xl px-[42px] xl:px-[80px] py-[6px] xl:py-[8px] ml-[20px]  text-gray_blue border border-gray_blue inline-block rounded-[20px]"
-                >
-                  Back
-                </button>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  // onClick={() => {
-                  //   navigate("/petDetails");
-                  // }}
-                  className="bg-gray_blue ml-[20px] px-[42px] xl:px-[80px] py-[6px] xl:py-[8px] text-white text-lg xl:text-2xl inline-block rounded-[20px]"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+            <Footer
+              leftTitle={"Back"}
+              rightTitle={"Next"}
+              leftNavigation={"/PetType"}
+              type="submit"
+            />
           </div>
         </form>
       )}

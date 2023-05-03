@@ -1,16 +1,11 @@
-import SignupPage3SideBar from "../Components/SideBars/SignupPage3SideBar";
+import SignUpWrapper from "./SignUpWrapper";
 import pug from "../images/pug_01.png"
 import VetDetailsForm from "../Components/SignupPages/VetDetailsForm";
 
 export default function VetDetails() {
   return (
-    <div className="flex flex-row min-h-screen">
-      <div className="w-1/5 bg-fixed bg-gray_blue">
-        <SignupPage3SideBar pageTitle="petDetails" pageimg={pug} />
-      </div>
-      <div className="w-4/5 ">
-        <VetDetailsForm />
-      </div>
-    </div>
+     <SignUpWrapper pageTitle="petDetails" pageimg={pug}>
+      <VetDetailsForm />
+    </SignUpWrapper>
   );
 }

@@ -5,8 +5,8 @@ import PaymentMethodForm from "../Components/MyProfile/PaymentMethodForm";
 const PaymentMethod=()=> {
   return (
     <div className=" h-screen">
-      <div className="grid grid-cols-12">
-        <div className="col-span-4 ">
+      <div className="grid grid-cols-12 h-full">
+        <div className="hidden lg:block col-span-4 ">
           <div className="grid grid-cols-2 h-screen">
             <div className=" hidden lg:block bg-fixed bg-gray_blue border-r-[1px]">
               <SideBar />
@@ -17,7 +17,7 @@ const PaymentMethod=()=> {
           </div>
         </div>
 
-        <div className="col-span-8 ">
+        <div className="col-span-12 lg:col-span-8 ">
           <PaymentMethodForm />
         </div>
       </div>

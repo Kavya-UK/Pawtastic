@@ -3,7 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Form, Field } from "react-final-form";
 import { useDispatch,useSelector } from "react-redux";
 import { setVetDetails } from "../../Redux/PetSignUpSlice";
-
+import Footer from "../Footer";
+import InputComponent from "../InputComponent";
 
 export default function VetDetailsForm() {
   const navigate = useNavigate();
@@ -30,85 +31,80 @@ export default function VetDetailsForm() {
         zipcode: formValue.zipcode,
       }}
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit}>
-          <div className="bg-shaded_pink h-[100%]">
-            <div className="p-[25px] ">
-              <div className="w-[60%] mx-auto">
-                <h4 className="text-gray_blue font-henriette font-bold text-[45px] leading-56 text-left">
-                  Got a preferred vet? <br />
-                  Let us know.
+        <form className=" h-[100%] " onSubmit={handleSubmit}>
+          <div className="h-[100%] ">
+            <div className="p-[25px]  w-full lg:w-[80%] xl:w-[70%] mx-auto">
+              <div className=" mx-auto">
+                <h4 className="text-gray_blue font-henriette font-bold text-5xl xl:text-8xl leading-35 xl:leading-56 text-left">
+                  Got a preferred vet? Let us know.
                 </h4>
               </div>
-              <div className="w-[60%] grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className=" xl:grid grid-cols-2 gap-4 mx-auto">
+                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] ">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="firstname"
                   >
                     Veterinarian’s name
                   </label>
-                  <Field
+                  <InputComponent
                     name="Veterinarianname"
                     component="input"
                     placeholder="Veterinarian’s name"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block ml-[0px]">
+                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px]">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="phone"
                   >
                     Veterinarian's phone number
                   </label>
-                  <Field
+                  <InputComponent
                     name="Veterinarianphonenumber"
                     component="input"
                     placeholder="Veterinarian’s phone number"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="text"
                   />
                 </div>
               </div>
 
-              <div className="w-[60%] grid grid-cols gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] inline-block">
+              <div className=" grid grid-cols gap-4 mx-auto">
+                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="label"
                   >
                     Label
                   </label>
-                  <Field
+                  <InputComponent
                     name="Label"
                     component="input"
                     placeholder="Placeholder text"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="text"
                   />
                 </div>
               </div>
-              <div className="w-[60%] grid grid-cols-4  gap-4 mx-auto">
-                <div className="mb-[5px] mt-[20px] col-span-2 inline-block">
+              <div className=" grid grid-cols-4  gap-4 mx-auto">
+                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] col-span-2 inline-block">
                   <label
-                    className="block text-3xl font-normal text-gray-500"
+                    className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="city"
                   >
                     City
                   </label>
-                  <Field
+                  <InputComponent
                     name="city"
                     component="input"
                     placeholder="City"
-                    className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     type="text"
                   />
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block">
+                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <div className="col-span-1">
                     <label
-                      className="block text-3xl font-normal text-gray-500"
+                      className="block text-xl xl:text-3xl font-normal text-gray-500"
                       for="state"
                     >
                       State
@@ -117,7 +113,7 @@ export default function VetDetailsForm() {
                     <Field
                       name="state"
                       component="select"
-                      className="w-full px-4 py-[18px] mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                      className="w-full px-2 py-[9px] mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                     >
                       <option value="FL">FL</option>
                       <option value="LA">LA</option>
@@ -125,48 +121,30 @@ export default function VetDetailsForm() {
                     </Field>
                   </div>
                 </div>
-                <div className="mb-[5px] mt-[20px] inline-block">
+                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
                   <div className="col-span-1">
                     <label
-                      className="block text-3xl font-normal text-gray-500"
+                      className="block text-xl xl:text-3xl font-normal text-gray-500"
                       for="zip"
                     >
                       Zip
                     </label>
-                    <Field
+                    <InputComponent
                       name="zipcode"
                       component="input"
                       placeholder="367"
-                      className="w-full px-4 py-3 mt-1 text-lg text-gray-700 placeholder-gray-400 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                       type="text"
                     />
                   </div>
                 </div>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-2/3 py-[20px] bg-white_color grid grid-cols-2 ">
-              <div>
-                <button
-                  onClick={() => {
-                    navigate("/petDetails");
-                  }}
-                  className="bg-white font-light font-basic-sans text-2xl px-[40px] ml-[20px] py-[8px] text-gray_blue border border-gray_blue inline-block rounded-[20px]"
-                >
-                  Back
-                </button>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  // onClick={() => {
-                  //   navigate("/confirm");
-                  // }}
-                  className="bg-gray_blue px-[80px] ml-[20px] py-[8px] text-white inline-block rounded-[20px]"
-                >
-                  Next
-                </button>
-              </div>
-            </div>
+            <Footer
+              leftTitle={"Back"}
+              rightTitle={"Next"}
+              leftNavigation={"/petDetails"}
+              type="submit"
+            />
           </div>
         </form>
       )}
