@@ -5,10 +5,16 @@ import { setPetDetails } from "../../Redux/PetSignUpSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../Footer";
 import InputComponent from "../InputComponent";
+import { required } from "../../helper/formValidation";
+
 export default function PetDetails() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formValue = useSelector((state) => state.PetSignUp.petdetail);
+  const [isErrorLabel, setIsErrorLabel] = useState(false);
+  const showlabelRed = (flag) => {
+    setIsErrorLabel(flag);
+  };
 
   const onSubmitHandler = (form) => {
     console.log("FORM VALUES", form);
@@ -78,106 +84,170 @@ export default function PetDetails() {
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Giving kisses"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Giving kisses" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Giving kisses"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Giving kisses
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Walks"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Walks
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Barking"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Barking
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Snuggling"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Snuggling
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Treats"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Treats
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Playing fetch"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Playing fetch
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Naps"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Naps
                   </label>
                 </div>
                 <div class="flex items-center">
-                  <Field
+                  <InputComponent
+                    showlabelRed={showlabelRed}
                     name="favroite"
                     value="Toys"
                     component="input"
                     placeholder=""
                     className="w-4 h-4 bg-white"
                     type="checkbox"
+                    validate={required}
                   />
-                  <label for="Walks" class="ml-2 text-lg sm:text-2xl">
+                  <label
+                    for="Walks"
+                    class={
+                      "ml-2 text-lg sm:text-2xl " +
+                      (isErrorLabel ? "text-red-700" : "text-grayish_blue")
+                    }
+                  >
                     Toys
                   </label>
                 </div>
@@ -190,9 +260,10 @@ export default function PetDetails() {
                   placeholder="Pet's name"
                   rows="4"
                   type="textarea"
+                  validate={required}
                 />
               </div>
-              <div className=" mx-auto mt-[30px] mb-[5px] text-left">
+              <div className=" mx-auto mb-[5px] text-left">
                 <label>Any pet habits</label>
                 <InputComponent
                   name="pethabits"
@@ -200,6 +271,7 @@ export default function PetDetails() {
                   placeholder="Pet's name"
                   rows="4"
                   type="text"
+                  validate={required}
                 />
               </div>
 

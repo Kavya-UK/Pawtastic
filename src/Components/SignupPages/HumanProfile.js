@@ -77,7 +77,7 @@ export default function HumanProfile() {
                 </div>
               </div>
               <div className=" grid grid-cols-2 gap-4 mx-auto">
-                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className=" mb-[1px] xl:mb-[5px] inline-block">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="phone"
@@ -92,7 +92,7 @@ export default function HumanProfile() {
                     validate={required}
                   />
                 </div>
-                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
+                <div className=" mb-[1px] xl:mb-[5px] inline-block ml-[0px]">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="landline"
@@ -109,7 +109,7 @@ export default function HumanProfile() {
                 </div>
               </div>
               <div className=" grid grid-cols gap-4 mx-auto">
-                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className=" mb-[1px] xl:mb-[5px] inline-block">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="label"
@@ -126,7 +126,7 @@ export default function HumanProfile() {
                 </div>
               </div>
               <div className=" grid grid-cols-4  gap-4 mx-auto">
-                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] col-span-4 md:col-span-2 inline-block">
+                <div className=" mb-[1px] xl:mb-[5px] col-span-4 md:col-span-2 inline-block">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="city"
@@ -141,7 +141,7 @@ export default function HumanProfile() {
                     validate={required}
                   />
                 </div>
-                <div className=" mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block col-span-2 md:col-span-1">
+                <div className=" mb-[1px] xl:mb-[5px] inline-block col-span-2 md:col-span-1">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="state"
@@ -159,7 +159,7 @@ export default function HumanProfile() {
                     <option value="DX">DX</option>
                   </Field>
                 </div>
-                <div className=" mb-[45px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block col-span-2 md:col-span-1">
+                <div className=" mb-[45px] xl:mb-[5px] inline-block col-span-2 md:col-span-1">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="zip"

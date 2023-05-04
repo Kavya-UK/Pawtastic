@@ -23,7 +23,7 @@ export default function LoginSidebar({ bgSideBarImg, sidebarTitle, subTitle }) {
           {subTitle}
         </h2>
       </div>
-      <div className="px-[15px]  text-left text-white_color text-base lg:text-lg xl:text-2xl font-basic-sans font-light mt-[10px]">
+      <div className="px-[15px]  text-left text-white_color text-lg lg:text-xl xl:text-2xl font-basic-sans font-light mt-[10px]">
         <ul className="list-disc ">
           <li>We're animal lovers backed by insurance and experience</li>
         </ul>

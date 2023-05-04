@@ -32,15 +32,19 @@ export default function ServiceQuoteWithImage({ selectedItem }) {
         </div>
 
         <div className="inline-block  relative  col-span-2">
-          <img
-            src={selectedItem.imageType}
-            alt="Avatar"
-            className="w-[128px] float-right"
-          />
-          <FontAwesomeIcon
-            icon={faMagnifyingGlassPlus}
-            className="absolute left-[85%] bottom-[5px] text-white_color"
-          />
+          {selectedItem.imageType && (
+            <>
+              <img
+                src={selectedItem.imageType}
+                alt="Avatar"
+                className="w-[128px] float-right"
+              />
+              <FontAwesomeIcon
+                icon={faMagnifyingGlassPlus}
+                className="absolute left-[85%] bottom-[5px] text-white_color"
+              />
+            </>
+          )}
         </div>
       </div>
     </div>

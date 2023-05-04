@@ -7,8 +7,15 @@ import {setPetBasic} from '../../Redux/PetSignUpSlice'
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../Footer";
 import InputComponent from "../InputComponent";
+import { required, isFutureData } from "../../helper/formValidation";
 
 export default function PetProfileSignup() {
+    const [gendererror, setGenderError] = useState("\xa0");
+    const [spayederror, setSpayedError] = useState("\xa0");
+    const [weighterror, setWeightError] = useState("\xa0");
+
+
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const formValue = useSelector((state) => state.PetSignUp.petbasic);
@@ -52,6 +59,7 @@ export default function PetProfileSignup() {
                     component="input"
                     placeholder="Pet's name"
                     type="text"
+                    validate={required}
                   />
                 </div>
                 <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
@@ -71,7 +79,7 @@ export default function PetProfileSignup() {
                       className="hidden"
                       type="file"
                       id="uploadPhoto"
-                    />
+                      />
 
                     <span class="inline-block text-grayish_blue font-basis-sans text-center  text-lg xl:text-3xl relative top-[10px] xl:top-[20px] pl-[8px] xl:pl-[20px]">
                       Upload a photo
@@ -80,7 +88,7 @@ export default function PetProfileSignup() {
                 </div>
               </div>
               <div className=" grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className="mb-[3px] xl:mb-[5px] inline-block">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="breed"
@@ -92,9 +100,10 @@ export default function PetProfileSignup() {
                     component="input"
                     placeholder="Pet's breed"
                     type="text"
+                    validate={required}
                   />
                 </div>
-                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px]">
+                <div className="mb-[3px] xl:mb-[5px] inline-block ml-[0px]">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="birthday"
@@ -106,11 +115,12 @@ export default function PetProfileSignup() {
                     component="input"
                     placeholder="MM/DD/YYYY"
                     type="date"
+                    validate={isFutureData}
                   />
                 </div>
               </div>
               <div className=" grid grid-cols-2 gap-4 mx-auto">
-                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className="mb-[3px] xl:mb-[5px] inline-block">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="gender"
@@ -137,7 +147,13 @@ export default function PetProfileSignup() {
                         );
                       }}
                     </Field>
-                    <Field name="gender" parse={() => "Male"}>
+                    <Field
+                      name="gender"
+                      parse={() => "Male"}
+                      validate={(value, form) =>
+                        required(value, form, "gender")
+                      }
+                    >
                       {({ input, meta }) => (
                         <button
                           type="button"
@@ -147,13 +163,19 @@ export default function PetProfileSignup() {
                             (input.value === "Male" ? "bg-pinkish_beige" : "")
                           }
                         >
+                          {meta.error && meta.touched
+                            ? setGenderError("Please select gender")
+                            : setGenderError("\xa0")}
                           Male
                         </button>
                       )}
                     </Field>
                   </div>
+                  <div className="text-left block text-red-700 pl-[5px]">
+                    {gendererror}
+                  </div>
                 </div>
-                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block ml-[0px] ">
+                <div className="mb-[3px] xl:mb-[5px] inline-block ml-[0px] ">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="spayed"
@@ -177,7 +199,13 @@ export default function PetProfileSignup() {
                         );
                       }}
                     </Field>
-                    <Field name="spayed" parse={() => "No"}>
+                    <Field
+                      name="spayed"
+                      parse={() => "No"}
+                      validate={(value, form) =>
+                        required(value, form, "spayed")
+                      }
+                    >
                       {({ input, meta }) => {
                         return (
                           <button
@@ -188,16 +216,23 @@ export default function PetProfileSignup() {
                               (input.value === "No" ? "bg-pinkish_beige" : "")
                             }
                           >
+                            {meta.error && meta.touched
+                              ? setSpayedError("Please select an option")
+                              : setSpayedError("\xa0")}
                             No
                           </button>
                         );
                       }}
                     </Field>
                   </div>
+
+                  <div className="text-left block text-red-700 pl-[5px]">
+                    {spayederror}
+                  </div>
                 </div>
               </div>
               <div className="  mx-auto">
-                <div className="mb-[3px] xl:mb-[5px] mt-[8px] xl:mt-[20px] ">
+                <div className="mb-[3px] xl:mb-[5px] mt-[5px] ">
                   <label
                     className="block  text-xl xl:text-3xl font-normal text-gray-500"
                     for="weight"
@@ -205,7 +240,13 @@ export default function PetProfileSignup() {
                     Weight
                   </label>
                   <div className="bg-white p-[5px] grid grid-cols-4 xl:gap-4 lg:py-[3px] text-gray_blue font-basic-sans text-lg xl:text-2xl">
-                    <Field name="weight" parse={() => "10-20"}>
+                    <Field
+                      name="weight"
+                      parse={() => "10-20"}
+                      validate={(value, form) =>
+                        required(value, form, "weight")
+                      }
+                    >
                       {({ input, meta }) => {
                         return (
                           <button
@@ -218,6 +259,9 @@ export default function PetProfileSignup() {
                                 : "")
                             }
                           >
+                            {meta.error && meta.touched
+                              ? setWeightError("Please select a weight")
+                              : setWeightError("\xa0")}
                             10-20
                             <br />
                             Pounds
@@ -283,6 +327,7 @@ export default function PetProfileSignup() {
                       }}
                     </Field>
                   </div>
+                  <div className="text-left block text-red-700 pl-[5px]">{weighterror}</div>
                 </div>
               </div>
             </div>

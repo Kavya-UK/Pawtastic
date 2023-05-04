@@ -3,6 +3,7 @@ import React from 'react'
 import {  Field } from "react-final-form";
 
 export default function InputComponent({
+  value,
   name,
   component,
   placeholder,
@@ -14,7 +15,12 @@ export default function InputComponent({
   showlabelRed = () => {}
 }) {
   return (
-    <Field name={name} validate={(value, form) => validate(value, form, name)}>
+    <Field
+      value={value}
+      type={type}
+      name={name}
+      validate={(value, form) => validate(value, form, name)}
+    >
       {({ input, meta }) => (
         <div>
           <input
@@ -30,14 +36,22 @@ export default function InputComponent({
             rows={rows}
             required={isRequired}
             {...input}
-            
           />
+
           {!(type === "checkbox") ? (
-            <span className="text-left block pl-[20px] text-red-700">
-              {meta.error && meta.touched && <span>{meta.error}</span>}
+            <span className="text-left block pl-[5px] text-red-700">
+              {
+                <span
+                  className={
+                    meta.error && meta.touched ? "visible" : "invisible"
+                  }
+                >
+                  {meta.error || "\xa0"}
+                </span>
+              }
             </span>
           ) : (
-            showlabelRed(meta.error && meta.touched && true)
+            showlabelRed(meta.error && meta.touched)
           )}
         </div>
       )}

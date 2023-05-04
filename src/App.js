@@ -1,5 +1,7 @@
 import './App.css';
 import "./Components/SignupPages/LoginPage.css"
+import React, { useRef, useEffect, useState } from "react";
+import mapboxgl from "mapbox-gl";
 // import SideBar from './Components/SideBar';
 // import SecondarySideBar from './Components/Secondary-SideBar';
 // import PetProfile from './Components/PetProfile';
@@ -15,26 +17,26 @@ import "./Components/SignupPages/LoginPage.css"
 import Routing from './Routing';
 
 function App() {
+  
   return (
     <div className="App">
+      <Routing />
       
-      <Routing/>
       {/* <div class="flex flex-row h-screen"> */}
-        {/* <SideBar /> */}
-        {/* <SecondarySideBar/> */}
-        {/* <div class="w-3/4 h-full p-[50px]"> */}
-          {/* <PetProfile /> */}
-          {/* <PetPCondensed/> */}
-          {/* <ServiceQuote /> */}
-          {/* <ServiceQuoteWithImage/> */}
-          {/* <ServiceAddress/> */}
-          {/* <SitterProfile/> */}
-          {/* <SitterEmptyState/> */}
-          {/* <ServiceReceipt/> */}
-          {/* <ServiceListItems/> */}
-          
-        </div>
-      // </div>
+      {/* <SideBar /> */}
+      {/* <SecondarySideBar/> */}
+      {/* <div class="w-3/4 h-full p-[50px]"> */}
+      {/* <PetProfile /> */}
+      {/* <PetPCondensed/> */}
+      {/* <ServiceQuote /> */}
+      {/* <ServiceQuoteWithImage/> */}
+      {/* <ServiceAddress/> */}
+      {/* <SitterProfile/> */}
+      {/* <SitterEmptyState/> */}
+      {/* <ServiceReceipt/> */}
+      {/* <ServiceListItems/> */}
+    </div>
+    // </div>
     // </div>
   );
 }

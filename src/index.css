@@ -23,3 +23,11 @@
     src: url("./Assets/fonts/BasicSans-Regular.otf");
 
 }
+
+.map-container {
+    height: 280px;
+    /* margin-left: 20px;
+    margin-right: 60px;
+    width:50%; */
+    border-radius:5px ;
+}

@@ -4,6 +4,7 @@ import { Form, Field } from "react-final-form";
 import { useDispatch, useSelector } from "react-redux";
 import { setZipDetails } from "../../Redux/PetSignUpSlice";
 import InputComponent from "../InputComponent";
+import { required } from "../../helper/formValidation";
 
 export default function ServiceLocation() {
   const navigate = useNavigate();
@@ -42,6 +43,7 @@ export default function ServiceLocation() {
                   component="input"
                   placeholder="Enter zipcode"
                   type="text"
+                  validate={required}
                 />
               </div>
             </div>

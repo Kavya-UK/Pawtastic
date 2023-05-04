@@ -5,6 +5,8 @@ import { useDispatch,useSelector } from "react-redux";
 import { setVetDetails } from "../../Redux/PetSignUpSlice";
 import Footer from "../Footer";
 import InputComponent from "../InputComponent";
+import { required } from "../../helper/formValidation";
+
 
 export default function VetDetailsForm() {
   const navigate = useNavigate();
@@ -52,6 +54,7 @@ export default function VetDetailsForm() {
                     component="input"
                     placeholder="Veterinarian’s name"
                     type="text"
+                    validate={required}
                   />
                 </div>
                 <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px]">
@@ -66,12 +69,13 @@ export default function VetDetailsForm() {
                     component="input"
                     placeholder="Veterinarian’s phone number"
                     type="text"
+                    validate={required}
                   />
                 </div>
               </div>
 
               <div className=" grid grid-cols gap-4 mx-auto">
-                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className="mb-[1px] xl:mb-[5px] inline-block">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="label"
@@ -83,11 +87,12 @@ export default function VetDetailsForm() {
                     component="input"
                     placeholder="Placeholder text"
                     type="text"
+                    validate={required}
                   />
                 </div>
               </div>
               <div className=" grid grid-cols-4  gap-4 mx-auto">
-                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] col-span-2 inline-block">
+                <div className="mb-[1px] xl:mb-[5px] col-span-2 inline-block">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="city"
@@ -99,9 +104,10 @@ export default function VetDetailsForm() {
                     component="input"
                     placeholder="City"
                     type="text"
+                    validate={required}
                   />
                 </div>
-                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className="mb-[1px] xl:mb-[5px] inline-block">
                   <div className="col-span-1">
                     <label
                       className="block text-xl xl:text-3xl font-normal text-gray-500"
@@ -121,7 +127,7 @@ export default function VetDetailsForm() {
                     </Field>
                   </div>
                 </div>
-                <div className="mb-[1px] xl:mb-[5px] mt-[8px] xl:mt-[20px] inline-block">
+                <div className="mb-[1px] xl:mb-[5px] inline-block">
                   <div className="col-span-1">
                     <label
                       className="block text-xl xl:text-3xl font-normal text-gray-500"
@@ -134,6 +140,7 @@ export default function VetDetailsForm() {
                       component="input"
                       placeholder="367"
                       type="text"
+                      validate={required}
                     />
                   </div>
                 </div>

@@ -10,7 +10,7 @@ export default function Footer({
 }) {
   const navigate = useNavigate();
   return (
-    <div className="fixed bottom-[0px] w-full md:w-4/5 py-[15px] xl:py-[20px] bg-white_color grid grid-cols-2 ">
+    <div className="fixed bottom-[0px] w-full md:w-3/4 py-[15px] xl:py-[20px] bg-white_color grid grid-cols-2 ">
       <div>
         <button
           onClick={() => {

@@ -5,7 +5,7 @@ import { Form, Field } from "react-final-form";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogin } from "../../Redux/PetSignUpSlice";
 import InputComponent from "../InputComponent";
-import {required} from '../../helper/formValidation'
+import { required, isConfirmPassword } from "../../helper/formValidation";
 export default function LoginPage({ isLogin }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -38,7 +38,7 @@ const showlabelRed = flag => {
                 </h4>
               </div>
 
-              <div className="mb-4   mt-[20px] mx-auto  ">
+              <div className="mb-2   mt-[20px] mx-auto  ">
                 <label
                   className="block text-xl xl:text-3xl font-normal text-gray-500"
                   for="emailId"
@@ -56,7 +56,7 @@ const showlabelRed = flag => {
               </div>
 
               {isLogin ? (
-                <div className="mb-4  mt-[20px] mx-auto">
+                <div className="mb-2   mx-auto">
                   <label
                     className="block text-xl xl:text-3xl font-normal text-gray-500"
                     for="password"
@@ -73,7 +73,7 @@ const showlabelRed = flag => {
                 </div>
               ) : (
                 <div className=" grid grid-cols-2 gap-4 mx-auto">
-                  <div className="mb-4 mt-[20px] inline-block">
+                  <div className="mb-2  inline-block">
                     <label
                       className="block text-xl xl:text-3xl font-normal text-gray-500"
                       for="password"
@@ -88,7 +88,7 @@ const showlabelRed = flag => {
                       validate={required}
                     />
                   </div>
-                  <div className="mb-4 mt-[20px] inline-block ml-[0px]">
+                  <div className="mb-2  inline-block ml-[0px]">
                     <label
                       className="block text-xl xl:text-3xl font-normal text-gray-500"
                       for="password"
@@ -100,12 +100,12 @@ const showlabelRed = flag => {
                       component="input"
                       placeholder="******"
                       type="password"
-                      validate={required}
+                      validate={isConfirmPassword}
                     />
                   </div>
                 </div>
               )}
-              <div className="flex mb-4  mt-[20px] mx-auto">
+              <div className="flex mb-2   mx-auto">
                 <InputComponent
                   name="privacypolicycheckbox"
                   component="input"
@@ -120,17 +120,15 @@ const showlabelRed = flag => {
                   for="privacy-policy-checkbox"
                   className={
                     "ml-2 block font-basic-sans text-xl xl:text-3xl " +
-                    (isErrorLabel
-                      ? "text-red-700"
-                      : "text-grayish_blue")
+                    (isErrorLabel ? "text-red-700" : "text-grayish_blue")
                   }
                 >
-                  I have read the Privacy Policy and agree to the
-                  Terms of Service .
+                  I have read the Privacy Policy and agree to the Terms of
+                  Service .
                 </label>
               </div>
             </div>
-            <div className="fixed bottom-[0px] w-[100%] md:w-4/5 py-[15px] xl:py-[20px] bg-white_color grid grid-cols-2 ">
+            <div className="fixed bottom-[0px] w-[100%] md:w-3/4 py-[15px] xl:py-[20px] bg-white_color grid grid-cols-2 ">
               <p className="text-gray_blue  font-basic-sans">
                 <span className="text-grayish_blue">
                   {isLogin ? "Not a member?" : "Already a member?"}{" "}

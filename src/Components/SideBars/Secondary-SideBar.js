@@ -10,7 +10,7 @@ export default function SecondarySideBar() {
           My Account
         </h2>
       </div>
-      <div class="pl-[50px] ">
+      <div class="pl-[20px] xl:pl-[50px] ">
         <div class=" p-[2px] text-left mt-[28px]  ">
           <h2 class="font-bold text-base leading-28 font-basic-sans text-sidebar_title">
             PROFILE
@@ -19,7 +19,7 @@ export default function SecondarySideBar() {
             <li>
               <Link
                 to="#"
-                className="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+                className="font-normal text-xl xl:text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
                 onClick={() => navigate("/homeaddress")}
               >
                 Home address
@@ -28,7 +28,7 @@ export default function SecondarySideBar() {
             <li>
               <Link
                 to="#"
-                className=" font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+                className=" font-normal text-xl xl:text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
               >
                 Contact info
               </Link>
@@ -43,7 +43,7 @@ export default function SecondarySideBar() {
             <li>
               <Link
                 to="#"
-                class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+                class="font-normal text-xl xl:text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
                 onClick={() => navigate("/paymentmethod")}
               >
                 Payment methods
@@ -52,7 +52,7 @@ export default function SecondarySideBar() {
             <li>
               <Link
                 to="#"
-                class="font-normal text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
+                class="font-normal text-xl xl:text-3xl leading-28 font-basic-sans text-left hover:text-sidebar_subTitleHover"
               >
                 Receipts
               </Link>

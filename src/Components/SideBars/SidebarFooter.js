@@ -2,12 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 const SidebarFooter = () => {
   return (
-    <div class="px-14 pb-8 absolute inset-x-0 bottom-0  text-left">
+    <div class=" pl-[40px] xl:pl-[50px] text-left pb-[20px] absolute inset-x-0 bottom-0 ">
       <ul>
         <li class="">
           <Link
             to="#"
-            className="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+            className="font-normal text-xl xl:text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
           >
             My account
           </Link>
@@ -15,7 +15,7 @@ const SidebarFooter = () => {
         <li class="">
           <Link
             to="#"
-            class="font-normal text-3xl leading-28 font-basic-sans  hover:text-sidebar_subTitleHover"
+            class="font-normal text-xl xl:text-3xl leading-28 font-basic-sans  hover:text-sidebar_subTitleHover"
           >
             Support
           </Link>
@@ -23,7 +23,7 @@ const SidebarFooter = () => {
         <li class="">
           <Link
             to="#"
-            class="font-normal text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
+            class="font-normal text-xl xl:text-3xl leading-28 font-basic-sans  text-left hover:text-sidebar_subTitleHover"
           >
             Sign out
           </Link>
